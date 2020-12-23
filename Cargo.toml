@@ -1,0 +1,20 @@
+[package]
+name = "windows-theme-color"
+version = "0.1.0"
+authors = ["Maximilian Köstler <maximilian@koestler.hamburg>"]
+edition = "2018"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/MaximilianKoestler/windows-theme-color"
+
+[features]
+default = ["piet"]
+piet = ["piet-rs"]
+
+[dependencies]
+# `piet` gets renamed to `piet-rs` so that we can use `piet` as the feature name.
+piet-rs = { version = "0.2.0-pre6", package = "piet", optional = true }
+winrt = { git = "https://github.com/microsoft/winrt-rs" }
+
+[build-dependencies]
+winrt = { git = "https://github.com/microsoft/winrt-rs" }
